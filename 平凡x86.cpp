@@ -28,17 +28,7 @@ void m_reset(int N)
 
 
 }
-void start()
-{
-    QueryPerformanceFrequency((LARGE_INTEGER*)&freq);
-    QueryPerformanceCounter((LARGE_INTEGER*)&head);
-}
-void timestop()
-{
-    QueryPerformanceCounter((LARGE_INTEGER*)&tail);	// end time
 
-
-}
 void pingfan(int N)
 {
     for (int k = 0; k < N; k++)
