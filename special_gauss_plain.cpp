@@ -116,7 +116,7 @@ int main() {
     eliminate.open("D:\\codeblockS\\test\\Eliminant.txt", ios::in);
     if (!eliminate.is_open()) 
 	{
-        cout << "Failed to open the file.£¨The read-in file doesn't exist£©" << endl;
+        cout << "Failed to open the file.Â£Â¨The read-in file doesn't existÂ£Â©" << endl;
         return 1;
     }
     vector<string> elte;
@@ -129,7 +129,7 @@ int main() {
     eliminated.open("D:\\codeblockS\\test\\Eliminated_rows.txt", ios::in);
     if (!eliminated.is_open()) 
 	{
-        cout << "Failed to open the file.£¨The read-in file doesn't exist£©'£©" << endl;
+        cout << "Failed to open the file.Â£Â¨The read-in file doesn't existÂ£Â©'Â£Â©" << endl;
         return 1;
     }
     vector<string> elted;
