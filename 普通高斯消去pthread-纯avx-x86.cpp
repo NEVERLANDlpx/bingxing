@@ -21,7 +21,7 @@ float** A = NULL;
 
 long long head, tail, freq;
 
-sem_t sem_main;  //ĞÅºÅÁ¿
+sem_t sem_main;  //ä¿¡å·é‡
 sem_t sem_workstart[NUM_THREADS];
 sem_t sem_workend[NUM_THREADS];
 
@@ -32,12 +32,12 @@ sem_t sem_Elimination[NUM_THREADS];
 pthread_barrier_t barrier_Division;
 pthread_barrier_t barrier_Elimination;
 
-struct threadParam_t {    //²ÎÊıÊı¾İ½á¹¹
+struct threadParam_t {    //å‚æ•°æ•°æ®ç»“æ„
     int k;
     int t_id;
 };
 
-void A_init() {     //Î´¶ÔÆëµÄÊı×éµÄ³õÊ¼»¯
+void A_init() {     //æœªå¯¹é½çš„æ•°ç»„çš„åˆå§‹åŒ–
     A = new float* [N];
     for (int i = 0; i < N; i++) {
         A[i] = new float[N];
@@ -76,7 +76,7 @@ void print(float** a) {
 }
 
 
-void avx_optimized() {            //avxÓÅ»¯Ëã·¨
+void avx_optimized() {            //avxä¼˜åŒ–ç®—æ³•
     for (int k = 0; k < N; k++) {
         __m256 vt = _mm256_set1_ps(A[k][k]);
         int j = 0;
@@ -123,7 +123,7 @@ int main() {
 
 
     cal(avx_optimized);
-    cout << "avxÓÅ»¯´®ĞĞºÄÊ±£º " << (tail - head) * 1000 / freq << "ms" << endl;
+    cout << "avxä¼˜åŒ–ä¸²è¡Œè€—æ—¶ï¼š " << (tail - head) * 1000 / freq << "ms" << endl;
     deleteA();
 
 
